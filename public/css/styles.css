@@ -3,19 +3,53 @@
   box-sizing: border-box;
 }
 
-body,
-html {
+html,
+body {
   margin: 0;
-  padding: 0;
+  padding: 3rem;
   font-size: 18px;
   background-color: #FFF;
   font-family: "helvetica", sans-serif;
+  text-align: center;
+  min-width: 900px;
+  background-color: mintcream;
+}
+
+.chat-bot-container {
+  background-color: white;
+  border: 3px solid #dce5e1;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-menu {
+  width: 20%;
+  height: 100%;
+  max-width: 200px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-menu img {
+  width: 85%;
+  border-radius: 5%;
+  border: 2px solid #dce5e1;
 }
 
 .wrapper {
   position: relative;
-  max-width: 1000px;
+  max-width: 800px;
+  width: 80%;
   margin: 0 auto;
+  border-radius: 25%;
 }
 .wrapper:after {
   content: "";
@@ -122,11 +156,11 @@ a.button:hover {
 /* chat client */
 #message_window {
   background: #FFFFFF;
-  border-left: 1px solid #CCC;
-  border-right: 1px solid #CCC;
+  /* border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC; */
   /*height: 500px;
   width: 320px;*/
-  height: 100%;
+  height: 90%;
   width: 100%;
   /*margin: 2rem auto;*/
   display: flex;
@@ -152,20 +186,33 @@ a.button:hover {
   padding: 0.25rem;
   display: block;
 }
-#message_window .powered_by {
+.powered_by {
+  margin-top: 0.5rem;
   flex-shrink: 0;
   text-align: center;
-  border-bottom: 1px solid #CCC;
-  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.75;
+  font-size: 12px;
+  font-weight: bold;
   padding: 0.25rem;
-  color: #666;
+  color: #abb2af;
 }
-#message_window .powered_by a {
+
+.powered_by a {
   text-decoration: none;
-  color: #666;
+  color: #abb2af;
 }
-#message_window .powered_by img {
+
+.powered_by a:hover {
+  font-size: 13px;
+  transition: 1s;
+  color: #abb2af;
+}
+
+.powered_by img {
   position: relative;
+  height: 12px;
+  width: 12px;
   top: 2px;
 }
 #message_window section {
@@ -242,9 +289,11 @@ a.button:hover {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
+
 #message_window .message p:last-child {
   margin-bottom: 0;
 }
+ß
 #message_window .message.outgoing {
   float: right;
   background: #a795ef;

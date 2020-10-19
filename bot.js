@@ -30,9 +30,7 @@ const adapter = new WebAdapter({});
 
 const controller = new Botkit({
     webhook_uri: '/api/messages',
-
     adapter: adapter,
-
     storage
 });
 
