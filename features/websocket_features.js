@@ -25,6 +25,26 @@ module.exports = function(controller) {
             });
         });
 
+        controller.hears(
+          new RegExp("love"),
+          "message",
+          async (bot, message) => {
+            await bot.reply(message, {
+              text: "Here are some quick replies",
+              quick_replies: [
+                {
+                  title: "love1",
+                  payload: "foo",
+                },
+                {
+                  title: "love2",
+                  payload: "bar",
+                },
+              ],
+            });
+          }
+        );
+
 
     }
 
