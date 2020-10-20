@@ -445,8 +445,8 @@ a.button:hover {
 }
 
 .welcome-modal {
-  /* display: flex; */
-  display: none;
+  display: flex;
+  /* display: none; */
   position: absolute;
   top: 0;
   left: 0;

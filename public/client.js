@@ -5,6 +5,12 @@
 var converter = new showdown.Converter();
 converter.setOption('openLinksInNewWindow', true);
 
+// variables for greeting modal
+const greetingButton = document.getElementById("user-button");
+const visitorInput = document.getElementById("name-input");
+const welcomeModal = document.getElementById("welcome-modal");
+let visitor;
+
 var Botkit = {
     config: {
         ws_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host,
@@ -361,7 +367,8 @@ var Botkit = {
             that.message_window.className = 'connected';
             that.input.disabled = false;
             that.sendEvent({
-                name: 'connected'
+                name: 'connected',
+                visitor: "catherine",
             });
         })
 
@@ -500,17 +507,12 @@ var Botkit = {
     }
 };
 
-const greetingButton = document.getElementById("user-button");
-const visitorInput = document.getElementById("name-input");
-const welcomeModal = document.getElementById("welcome-modal");
-let visitor;
-
 (function() {
         greetingButton.onclick = (e) => {
             e.preventDefault();
-            visitor = visitorInput.value;
             welcomeModal.style.display = "none";
-    
+            visitor = visitorInput.value;
+            window.example = visitor;
             document.getElementById("menu-info").innerHTML = visitor;
         }
     Botkit.boot();

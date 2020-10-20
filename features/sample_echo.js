@@ -4,6 +4,7 @@
  */
 
 module.exports = function(controller) {
+debugger
     controller.hears('sample','message,direct_message', async(bot, message) => {
         await bot.reply(message, 'I heard a sample message.');
     });
@@ -12,9 +13,11 @@ module.exports = function(controller) {
       'hello',
       'message,direct_message',
       async (bot, message) => {
+debugger
+            // console.log(window.example);
             await bot.reply(
               message,
-              "Hello and welcome!" + visitor
+              "Hello and welcome!"
             );
       }
     );
