@@ -4,16 +4,31 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
         <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.4/dist/showdown.min.js"></script>
         <link rel="stylesheet" href="/css/styles.css" />
+
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body >
+
+      <!-- welcome modal -->
+      <section class="welcome-modal" id="welcome-modal">
+        <form class="welcome-form">
+          <div class="user-form-inner">
+              <p class="welcome-form-greeting">
+                <img src="profile.JPG"><br/>
+                  Welcome to MintBot! I'm the virtual representative of Catherine Kim. <br/>
+                  How should we address you?
+              </p>
+              <input type="text" id="name-input" maxlength="35">
+              <button id="user-button">Enter</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- chatbot -->
       <div class="chat-bot-container">
-        <div class="main-menu">
-          <img src="profile.JPG">
-          <section class="menu-info">
-            information
-          </section>
-        </div>
         <div class="wrapper">
           <div id="message_window">
               <div class="disconnected">
@@ -22,7 +37,7 @@
               <div class="offline">
                   You are offline. Please refresh to reconnect to MintBot.
               </div>
-              <section>
+              <section >
                   <div id="message_list">
                       <div id="message_template">
                           <div class="message {{message.type}}">
@@ -54,9 +69,9 @@
               <div id="message_replies">
               </div>
               <footer>
-                  <form onsubmit="Botkit.send(Botkit.input.value, event)">
+                  <form id="message_window_form" onsubmit="Botkit.send(Botkit.input.value, event)">
                       <input type="text" autocomplete="off" id="messenger_input" placeholder="Type here..." />
-                      <button type="submit">Send</button>
+                      <button id="send-button" type="submit">Send</button>
                   </form>
               </footer>
           </div>

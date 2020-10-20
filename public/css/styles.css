@@ -3,27 +3,45 @@
   box-sizing: border-box;
 }
 
+html {
+  margin: 0 auto;
+}
+
 html,
 body {
   margin: 0;
-  padding: 3rem;
   font-size: 18px;
   background-color: #FFF;
-  font-family: "helvetica", sans-serif;
-  text-align: center;
-  min-width: 900px;
+  font-family: "Ubuntu", sans-serif;
+  min-width: 1000px;
   background-color: mintcream;
+}
+
+body {
+  padding: 5rem;
+  height: calc(100% - 0.5rem - 12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .chat-bot-container {
   background-color: white;
   border: 3px solid #dce5e1;
   border-radius: 2rem;
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  margin-top: 1rem;
+  padding: 1rem;
+  padding-right: 0;
+  padding-left: 0;
   height: 100%;
+  width: 100%;
+  min-height: 6rem;
+  max-width: 1000px;
 }
 
 .main-menu {
@@ -38,19 +56,28 @@ body {
   align-items: center;
 }
 
-.main-menu img {
-  width: 85%;
-  border-radius: 5%;
+.welcome-form-greeting img {
+  width: 12rem;
+  border-radius: 50%;
   border: 2px solid #dce5e1;
+  margin-bottom: 1rem;
+}
+
+.menu-info {
+  height: 75%;
 }
 
 .wrapper {
   position: relative;
-  max-width: 800px;
-  width: 80%;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   border-radius: 25%;
 }
+
 .wrapper:after {
   content: "";
   display: table;
@@ -154,17 +181,11 @@ a.button:hover {
 }
 
 /* chat client */
+
 #message_window {
-  background: #FFFFFF;
-  /* border-left: 1px solid #CCC;
-  border-right: 1px solid #CCC; */
-  /*height: 500px;
-  width: 320px;*/
-  height: 90%;
+  background: none;
+  height: 100%;
   width: 100%;
-  /*margin: 2rem auto;*/
-  display: flex;
-  flex-direction: column;
   font-family: "helvetica", sans-serif;
 }
 #message_window .disconnected {
@@ -186,6 +207,7 @@ a.button:hover {
   padding: 0.25rem;
   display: block;
 }
+
 .powered_by {
   margin-top: 0.5rem;
   flex-shrink: 0;
@@ -215,10 +237,15 @@ a.button:hover {
   width: 12px;
   top: 2px;
 }
+
 #message_window section {
   flex-grow: 1;
-  flex-direction: column-reverse;
-  display: flex;
+  height: 90%;
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  /* flex-direction: column-reverse;
+  display: flex; */
   overflow-y: auto;
 }
 #message_window section div div {
@@ -226,39 +253,63 @@ a.button:hover {
   clear: both;
 }
 #message_window footer {
-  border-top: 1px solid #CCC;
   padding: 0.25rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  width: 100%;
 }
 #message_window footer input[type=text] {
   flex-grow: 1;
-  font-size: 1.25rem;
+  font-size: 0.85rem;
+  background: mintcream;
+  padding: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  letter-spacing: 0.75;
   outline: none;
   border: none;
 }
+
 #message_window footer button {
-  width: 50px;
   background: none;
   border: 0;
   cursor: pointer;
-  color: blue;
+  color: #939996;
+  background: mintcream;
+  border: 0px solid #939996;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  margin-right: 0.5rem;
   font-weight: bold;
+  letter-spacing: 1;
+  text-transform: uppercase;
 }
+
+#message_window footer button:hover {
+  color: #dce5e1;
+}
+
 #message_window form {
   display: flex;
   margin: 0;
-  padding: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  background: mintcream;
 }
 #message_window #message_template {
   display: none;
 }
 #message_window .message {
   font-size: 14px;
-  padding: 0.5rem;
   background: #F0F0F0;
   color: #333;
-  border-radius: 5px;
+  border-radius: 2rem;
   width: auto;
-  display: inline-block;
+  float: left;
+  display: block;
   max-width: 75%;
 }
 #message_window .file_attachment {
@@ -288,16 +339,18 @@ a.button:hover {
 #message_window .message p {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  padding: 0.6rem;
 }
 
 #message_window .message p:last-child {
   margin-bottom: 0;
 }
-ß
+
 #message_window .message.outgoing {
   float: right;
-  background: #a795ef;
-  color: white;
+  margin-right: 1rem;
+  background: mintcream;
+  color: black;
 }
 #message_window #message_replies {
   text-align: center;
@@ -389,6 +442,23 @@ a.button:hover {
 
 #welcome {
   margin-left: 440px;
+}
+
+.welcome-modal {
+  /* display: flex; */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.welcome-modal p {
+  font: 'Ubuntu', sans-serif;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -500,9 +500,18 @@ var Botkit = {
     }
 };
 
+const greetingButton = document.getElementById("user-button");
+const visitorInput = document.getElementById("name-input");
+const welcomeModal = document.getElementById("welcome-modal");
+let visitor;
 
-(function () {
-    // your page initialization code here
-    // the DOM will be available here
+(function() {
+        greetingButton.onclick = (e) => {
+            e.preventDefault();
+            visitor = visitorInput.value;
+            welcomeModal.style.display = "none";
+    
+            document.getElementById("menu-info").innerHTML = visitor;
+        }
     Botkit.boot();
 })();
