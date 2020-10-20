@@ -191,6 +191,7 @@ var Botkit = {
             that.reconnect_count = 0;
             that.trigger('connected', event);
             that.deliverMessage({
+                text: "hiiii",
                 type: connectEvent,
                 user: that.guid,
                 channel: 'socket',
@@ -338,8 +339,6 @@ var Botkit = {
     },
     boot: function (user) {
 
-        console.log('Booting up');
-
         var that = this;
 
 
@@ -384,14 +383,27 @@ var Botkit = {
         });
 
         that.on('sent', function () {
-            // do something after sending
+              var audio = new Audio("sent.mp3");
+              audio.play();
         });
 
         that.on('message', function (message) {
+            that.clearReplies();
+            that.renderMessage({
+              isTyping: true,
+            });
+            setTimeout(async () => {
+              that.renderMessage(message);
+            }, 1000);
 
-            console.log('RECEIVED MESSAGE', message);
-            that.renderMessage(message);
+        });
 
+        that.on("message", function () {
+        
+            setTimeout(async () => {
+              var audio = new Audio("beep.mp3");
+              audio.play();
+            }, 1000);
         });
 
         that.on('message', function (message) {
@@ -400,34 +412,37 @@ var Botkit = {
             }
         });
 
-
         that.on('message', function (message) {
             that.clearReplies();
             if (message.quick_replies) {
+                that.clearReplies();
+                that.renderMessage({
+                  isTyping: true,
+                });
 
-                var list = document.createElement('ul');
+                setTimeout(async () => {
+                  var list = document.createElement("ul");
 
-                var elements = [];
-                for (var r = 0; r < message.quick_replies.length; r++) {
+                  var elements = [];
+                  for (var r = 0; r < message.quick_replies.length; r++) {
                     (function (reply) {
+                      var li = document.createElement("li");
+                      var el = document.createElement("a");
+                      el.innerHTML = reply.title;
+                      el.href = "#";
 
-                        var li = document.createElement('li');
-                        var el = document.createElement('a');
-                        el.innerHTML = reply.title;
-                        el.href = '#';
+                      el.onclick = function () {
+                        that.quickReply(reply.payload);
+                      };
 
-                        el.onclick = function () {
-                            that.quickReply(reply.payload);
-                        }
-
-                        li.appendChild(el);
-                        list.appendChild(li);
-                        elements.push(li);
-
+                      li.appendChild(el);
+                      list.appendChild(li);
+                      elements.push(li);
                     })(message.quick_replies[r]);
-                }
+                  }
 
-                that.replies.appendChild(list);
+                  that.replies.appendChild(list);
+                }, 1000);
 
                 // uncomment this code if you want your quick replies to scroll horizontally instead of stacking
                 // var width = 0;
