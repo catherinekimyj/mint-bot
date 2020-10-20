@@ -339,8 +339,6 @@ var Botkit = {
     },
     boot: function (user) {
 
-        console.log('Booting up');
-       
         var that = this;
 
 
@@ -357,7 +355,7 @@ var Botkit = {
 
         that.focus();
 
-        that.on('connected', function (message) {
+        that.on('connected', function () {
             that.message_window.className = 'connected';
             that.input.disabled = false;
             that.sendEvent({
@@ -395,7 +393,6 @@ var Botkit = {
               isTyping: true,
             });
             setTimeout(async () => {
-              console.log("RECEIVED MESSAGE", message);
               that.renderMessage(message);
             }, 1000);
 
