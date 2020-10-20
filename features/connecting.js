@@ -4,15 +4,36 @@ module.exports = function (controller) {
 
   function Greeting(bot, message) {
       bot.reply(message, {
-        text: "Hello and welcome! I am currently open to work!:) You can ask me anything!",
+        text:
+          "Hello and welcome! I am currently open to work!:) You can ask me anything!",
         quick_replies: [
           {
-            title: "Foo",
-            payload: "foo",
+            title: "Basic",
+            payload: "basic",
           },
           {
-            title: "Bar",
-            payload: "bar",
+            title: "Work",
+            payload: "work",
+          },
+          {
+            title: "Volunteer",
+            payload: "volunteer",
+          },
+          {
+            title: "Education",
+            payload: "education",
+          },
+          {
+            title: "Skills",
+            payload: "skills",
+          },
+          {
+            title: "Languages",
+            payload: "languages",
+          },
+          {
+            title: "Projects",
+            payload: "projects",
           },
         ],
       });

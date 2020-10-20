@@ -5,28 +5,76 @@
 
 module.exports = function(controller) {
 
-    controller.hears('sample','message,direct_message', async(bot, message) => {
-        await bot.reply(message, 'I heard a sample message.');
-    });
-
     controller.hears(
-      'hello',
-      'message,direct_message',
+      async (message) =>
+        (message.text && message.text.toLowerCase() === "hello") ||
+        (message.text && message.text.toLowerCase() === "good morning") ||
+        (message.text && message.text.toLowerCase() === "hi") ||
+        (message.text && message.text.toLowerCase() === "good day"),
+      "message",
       async (bot, message) => {
-            await bot.reply(
-              message,
-              "Hello and welcome!"
-            );
+        await bot.reply(message, {
+          text:
+            "Hello there. I am happy you are here!",
+          quick_replies: [
+            {
+              title: "Basic",
+              payload: "basic",
+            },
+            {
+              title: "Work",
+              payload: "work",
+            },
+            {
+              title: "Education",
+              payload: "education",
+            },
+            {
+              title: "Skills",
+              payload: "skills",
+            },
+            {
+              title: "Languages",
+              payload: "languages",
+            },
+            {
+              title: "Projects",
+              payload: "projects",
+            },
+          ],
+        });
       }
     );
 
 
     controller.on('message,direct_message', async(bot, message) => {
-        await bot.reply(message, `Echo: ${ message.text }`);
-    });
-
-    controller.on('connected', async (bot, message) => {
-      console.log("emina");
-      await bot.reply(message, "emina je");
+        await bot.reply(message, {text: "I am afraid I can't aswer that for now. Would you like to ask me a different question?", 
+        quick_replies: [
+            {
+              title: "Basic",
+              payload: "basic",
+            },
+            {
+              title: "Volunteer",
+              payload: "volunteer",
+            },
+            {
+              title: "Education",
+              payload: "education",
+            },
+            {
+              title: "Skills",
+              payload: "skills",
+            },
+            {
+              title: "Languages",
+              payload: "languages",
+            },
+            {
+              title: "Projects",
+              payload: "projects",
+            },
+          ],
+        });
     });
 }
