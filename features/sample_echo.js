@@ -48,7 +48,7 @@ module.exports = function(controller) {
 
 
     controller.on('message,direct_message', async(bot, message) => {
-        await bot.reply(message, {text: "I am afraid I can't aswer that for now. Would you like to ask me a different question?", 
+        await bot.reply(message, {text: "I am afraid I can't answer that for now. Would you like to ask me a different question?", 
         quick_replies: [
             {
               title: "Basic",

@@ -1,11 +1,12 @@
+var json = require("./resume.json");
+
 module.exports = function (controller) {
     controller.on("hello", Greeting);
     controller.on("welcome_back", Greeting);
     function Greeting(bot, message) {
-debugger
         bot.reply(message, {
           text:
-            "Hello and welcome! I am currently open to work!:) You can ask me anything!",
+            "Hello and welcome! My name is " + json.basics.name + ". I am currently " + json.basics.jobStatus + ". Please feel free to ask me anything.",
           quick_replies: [
             {
               title: "Basic",

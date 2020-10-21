@@ -5,7 +5,8 @@
         "description": "Software Engineer | Web Development Javascript Ruby Rails React Redux Git Express.js Node.js PostgreSQL MongoDB AWS CSS/SCSS HTML",
         "image": "",
         "email": "catkimyj@gmail.com",
-        "phone": "9293996005",
+        "phone": "(929)-399-6005",
+        "jobStatus": "open to work",
         "url": "http://catherinekim.me/",
         "summary": "I am a designer turned software engineer who believes that exquisite code not only outputs a product that is user-friendly, comprehensive, and functional, such values are held within the visual aspects of the lines of code, as well. I am adaptable, open-minded, and value all learning experiences. With prior managerial skills with past employers, I am always a team player and believe in rising up together rather than holding a win-lose mindset. ",
         "location": {
@@ -19,6 +20,11 @@
                 "network": "LinkedIn",
                 "username": "catherinekimyj",
                 "url": "https://www.linkedin.com/in/catherinekimyj/"
+            },
+            {
+                "network": "AngelList",
+                "username": "catherinekimyj",
+                "url": "https://www.angel.co/u/catherinekimyj/"
             }
         ]
     },
@@ -117,11 +123,40 @@
     ],
     "awards": [],
     "publications": [],
-    "skills": [ "Git", "JavaScript", "Ruby", "Back-End Web Development", "HTML5", "Amazon Web Services (AWS)", "jQuery", "Front-End Development",
-                "Cascading Style Sheets (CSS)", "HTML", "Node.js", "SQL", "Web Development", "CAD", "React", "AJAX", "Google Maps API", "Express.js",
-                "Microsoft Office", "PowerPoint", "Illustrator", "Application Programming Interfaces", "API", "MongoDB", "Lightroom", "Microsoft Word",
-                "Redux", "Photoshop", "User Experience (UX)", "Ruby on Rails", "InDesign", "Test Driven Development", "TDD", "React.js", "Full-Stack Development",
-                "PostgreSQL"
+    "skills": [ 
+        {
+            "languages": 
+                ["JavaScript", "Ruby"]
+        },
+        {
+            "stack": [
+                "Ruby on Rails", "React-Redux", "Express.js", "MongoDB", "Node.js", "SQL"
+            ]
+        },
+        {
+            "allSkills": [
+                "JavaScript", "Ruby", "HTML5",  "Cascading Style Sheets (CSS)", "Git", "Amazon Web Services (AWS)", "Rails",
+                "React", "Redux", "MongoDB", "Express.js", "Node.js", "SQL", "jQuery", "AJAX", "Google Maps API",    
+                "Application Programming Interfaces", "Test Driven Development", "PostgreSQL", "Web Development", "Front-end Development",
+                "Back-end Development",
+                "Microsoft Word", "Microsoft Office", "PowerPoint", "Illustrator", "Lightroom",
+                "Photoshop", "InDesign"
+            ]
+        },
+        {
+            "techSkills": [
+                "JavaScript", "Ruby", "HTML5",  "Cascading Style Sheets (CSS)", "Git", "Amazon Web Services (AWS)", "Rails",
+                "React", "Redux", "MongoDB", "Express.js", "Node.js", "SQL", "jQuery", "AJAX", "Google Maps API",    
+                "Application Programming Interfaces", "Test Driven Development", "PostgreSQL", "Web Development", "Front-end Development",
+                "Back-end Development"
+            ]
+        },
+        {
+            "miscSkills": [
+                "Microsoft Word", "Microsoft Office", "PowerPoint", "Illustrator", "Lightroom",
+                "Photoshop", "InDesign"
+            ]
+        }
     ],   
     "languages": [
         {

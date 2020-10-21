@@ -1,5 +1,6 @@
-module.exports = function (controller) {
-  if (controller.adapter.name === "Web Adapter") {
+var json = require("./resume.json");
+
+module.exports = function(controller) {
     controller.hears(
       async (message) =>
         (message.text && message.text.toLowerCase() === "education") ||
@@ -47,5 +48,4 @@ module.exports = function (controller) {
         });
       }
     );
-  }
 };

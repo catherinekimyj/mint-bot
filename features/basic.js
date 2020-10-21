@@ -195,65 +195,65 @@ module.exports = function(controller) {
           }
         );
 
-        controller.hears(
-          new RegExp("email"),
-          "message",
-          async (bot, message) => {
-            await bot.reply(message, {
-              text: "catkimyj@gmail.com",
-              quick_replies: [
-                {
-                  title: "Name",
-                  payload: "name",
-                },
-                {
-                  title: "Description",
-                  payload: "description",
-                },
-                {
-                  title: "Summary",
-                  payload: "summary",
-                },
-                {
-                  title: "Location",
-                  payload: "location",
-                },
-                {
-                  title: "Profiles",
-                  payload: "profiles",
-                },
-                {
-                  title: "Back",
-                  payload: "basic",
-                },
-                {
-                  title: "Work",
-                  payload: "work",
-                },
-                {
-                  title: "Volunteer",
-                  payload: "volunteer",
-                },
-                {
-                  title: "Education",
-                  payload: "education",
-                },
-                {
-                  title: "Skills",
-                  payload: "skills",
-                },
-                {
-                  title: "Languages",
-                  payload: "languages",
-                },
-                {
-                  title: "Projects",
-                  payload: "projects",
-                },
-              ],
-            });
-          }
-        );
+        // controller.hears(
+        //   new RegExp("email"),
+        //   "message",
+        //   async (bot, message) => {
+        //     await bot.reply(message, {
+        //       text: "catkimyj@gmail.com",
+        //       quick_replies: [
+        //         {
+        //           title: "Name",
+        //           payload: "name",
+        //         },
+        //         {
+        //           title: "Description",
+        //           payload: "description",
+        //         },
+        //         {
+        //           title: "Summary",
+        //           payload: "summary",
+        //         },
+        //         {
+        //           title: "Location",
+        //           payload: "location",
+        //         },
+        //         {
+        //           title: "Profiles",
+        //           payload: "profiles",
+        //         },
+        //         {
+        //           title: "Back",
+        //           payload: "basic",
+        //         },
+        //         {
+        //           title: "Work",
+        //           payload: "work",
+        //         },
+        //         {
+        //           title: "Volunteer",
+        //           payload: "volunteer",
+        //         },
+        //         {
+        //           title: "Education",
+        //           payload: "education",
+        //         },
+        //         {
+        //           title: "Skills",
+        //           payload: "skills",
+        //         },
+        //         {
+        //           title: "Languages",
+        //           payload: "languages",
+        //         },
+        //         {
+        //           title: "Projects",
+        //           payload: "projects",
+        //         },
+        //       ],
+        //     });
+        //   }
+        // );
 
         controller.hears(
           new RegExp("summary"),
@@ -316,65 +316,65 @@ module.exports = function(controller) {
           }
         );
 
-        controller.hears(
-          new RegExp("email"),
-          "message",
-          async (bot, message) => {
-            await bot.reply(message, {
-              text: "catkimyj@gmail.com",
-              quick_replies: [
-                {
-                  title: "Name",
-                  payload: "name",
-                },
-                {
-                  title: "Description",
-                  payload: "description",
-                },
-                {
-                  title: "Summary",
-                  payload: "summary",
-                },
-                {
-                  title: "Location",
-                  payload: "location",
-                },
-                {
-                  title: "Profiles",
-                  payload: "profiles",
-                },
-                {
-                  title: "Back",
-                  payload: "basic",
-                },
-                {
-                  title: "Work",
-                  payload: "work",
-                },
-                {
-                  title: "Volunteer",
-                  payload: "volunteer",
-                },
-                {
-                  title: "Education",
-                  payload: "education",
-                },
-                {
-                  title: "Skills",
-                  payload: "skills",
-                },
-                {
-                  title: "Languages",
-                  payload: "languages",
-                },
-                {
-                  title: "Projects",
-                  payload: "projects",
-                },
-              ],
-            });
-          }
-        );
+        // controller.hears(
+        //   new RegExp("email"),
+        //   "message",
+        //   async (bot, message) => {
+        //     await bot.reply(message, {
+        //       text: "catkimyj@gmail.com",
+        //       quick_replies: [
+        //         {
+        //           title: "Name",
+        //           payload: "name",
+        //         },
+        //         {
+        //           title: "Description",
+        //           payload: "description",
+        //         },
+        //         {
+        //           title: "Summary",
+        //           payload: "summary",
+        //         },
+        //         {
+        //           title: "Location",
+        //           payload: "location",
+        //         },
+        //         {
+        //           title: "Profiles",
+        //           payload: "profiles",
+        //         },
+        //         {
+        //           title: "Back",
+        //           payload: "basic",
+        //         },
+        //         {
+        //           title: "Work",
+        //           payload: "work",
+        //         },
+        //         {
+        //           title: "Volunteer",
+        //           payload: "volunteer",
+        //         },
+        //         {
+        //           title: "Education",
+        //           payload: "education",
+        //         },
+        //         {
+        //           title: "Skills",
+        //           payload: "skills",
+        //         },
+        //         {
+        //           title: "Languages",
+        //           payload: "languages",
+        //         },
+        //         {
+        //           title: "Projects",
+        //           payload: "projects",
+        //         },
+        //       ],
+        //     });
+        //   }
+        // );
 
         controller.hears(
           new RegExp("location"),
@@ -437,65 +437,65 @@ module.exports = function(controller) {
         );
 
 
-        controller.hears(
-          new RegExp("email"),
-          "message",
-          async (bot, message) => {
-            await bot.reply(message, {
-              text: "catkimyj@gmail.com",
-              quick_replies: [
-                {
-                  title: "Name",
-                  payload: "name",
-                },
-                {
-                  title: "Description",
-                  payload: "description",
-                },
-                {
-                  title: "Summary",
-                  payload: "summary",
-                },
-                {
-                  title: "Location",
-                  payload: "location",
-                },
-                {
-                  title: "Profiles",
-                  payload: "profiles",
-                },
-                {
-                  title: "Back",
-                  payload: "basic",
-                },
-                {
-                  title: "Work",
-                  payload: "work",
-                },
-                {
-                  title: "Volunteer",
-                  payload: "volunteer",
-                },
-                {
-                  title: "Education",
-                  payload: "education",
-                },
-                {
-                  title: "Skills",
-                  payload: "skills",
-                },
-                {
-                  title: "Languages",
-                  payload: "languages",
-                },
-                {
-                  title: "Projects",
-                  payload: "projects",
-                },
-              ],
-            });
-          }
-        );
+        // controller.hears(
+        //   new RegExp("email"),
+        //   "message",
+        //   async (bot, message) => {
+        //     await bot.reply(message, {
+        //       text: "catkimyj@gmail.com",
+        //       quick_replies: [
+        //         {
+        //           title: "Name",
+        //           payload: "name",
+        //         },
+        //         {
+        //           title: "Description",
+        //           payload: "description",
+        //         },
+        //         {
+        //           title: "Summary",
+        //           payload: "summary",
+        //         },
+        //         {
+        //           title: "Location",
+        //           payload: "location",
+        //         },
+        //         {
+        //           title: "Profiles",
+        //           payload: "profiles",
+        //         },
+        //         {
+        //           title: "Back",
+        //           payload: "basic",
+        //         },
+        //         {
+        //           title: "Work",
+        //           payload: "work",
+        //         },
+        //         {
+        //           title: "Volunteer",
+        //           payload: "volunteer",
+        //         },
+        //         {
+        //           title: "Education",
+        //           payload: "education",
+        //         },
+        //         {
+        //           title: "Skills",
+        //           payload: "skills",
+        //         },
+        //         {
+        //           title: "Languages",
+        //           payload: "languages",
+        //         },
+        //         {
+        //           title: "Projects",
+        //           payload: "projects",
+        //         },
+        //       ],
+        //     });
+        //   }
+        // );
 
         controller.hears(
           new RegExp("profiles"),
