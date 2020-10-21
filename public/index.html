@@ -8,6 +8,7 @@
 
         <!-- google fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -17,19 +18,24 @@
       <section class="welcome-modal" id="welcome-modal">
         <form class="welcome-form">
           <div class="user-form-inner">
-              <p class="welcome-form-greeting">
-                <img src="profile.jpg"><br/>
-                  Welcome to MintBot! I'm the virtual representative of Catherine Kim. <br/>
-                  How should we address you?
-              </p>
-              <input type="text" id="name-input" maxlength="35">
-              <button id="user-button">Enter</button>
+            <img src="profile.jpg"><br/>
+              <div class="welcome-form-greeting">
+                <p class="welcome-form-greet">Welcome to MintBot!</p>
+                <p class="welcome-form-greeting-text">I'm the virtual representative of Catherine Kim. How should I address you?</p>
+                <section class="welcome-input">
+                  <input type="text" id="name-input" maxlength="35">
+                  <button id="user-button">Enter</button>
+                </section>
+              </div>
           </div>
         </form>
       </section>
 
       <!-- chatbot -->
-      <div id="menu-info"></div>
+      <div id="menu-info">
+        <span id="menu-info-greeting">Welcome, </span>
+        <span id="menu-info-name"></span>
+      </div>
       <div class="chat-bot-container">
         <div class="wrapper">
           <div id="message_window">

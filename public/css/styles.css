@@ -56,15 +56,24 @@ body {
   align-items: center;
 }
 
-.welcome-form-greeting img {
+.user-form-inner img {
   width: 12rem;
   border-radius: 50%;
   border: 2px solid #dce5e1;
-  margin-bottom: 1rem;
 }
 
-.menu-info {
-  height: 75%;
+#menu-info {
+  font-family: 'Allura', cursive;
+  width: 75%;
+  text-align: right;
+  font-size: 3.5rem;
+  position: absolute;
+  top: 3.2rem;
+  color: #494c4b;
+}
+
+#menu-info-name {
+  text-transform: capitalize;
 }
 
 .wrapper {
@@ -184,6 +193,9 @@ a.button:hover {
 
 #message_window {
   background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100%;
   width: 100%;
   font-family: "helvetica", sans-serif;
@@ -240,8 +252,9 @@ a.button:hover {
 
 #message_window section {
   flex-grow: 1;
-  height: 90%;
+  height: 75%;
   width: 100%;
+  margin-top: 0.5rem;
   padding-right: 1rem;
   padding-left: 1rem;
   /* flex-direction: column-reverse;
@@ -339,7 +352,12 @@ a.button:hover {
 #message_window .message p {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  padding: 0.6rem;
+  padding: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 0.3;
+  line-height: 1.5;
 }
 
 #message_window .message p:last-child {
@@ -372,15 +390,15 @@ a.button:hover {
 #message_window #message_replies a {
   text-decoration: none;
   display: block;
-  border: 1px solid #a795ef;
-  color: #a795ef;
+  border: 1px solid #dce5e1;
+  color: #313332;
   border-radius: 16px;
   padding: 0.25rem 1rem;
   font-size: 14px;
   cursor: pointer;
 }
 #message_window #message_replies a:hover {
-  background: #a795ef;
+  background: #dce5e1;
   color: #FFF;
 }
 
@@ -448,6 +466,7 @@ a.button:hover {
   display: flex;
   /* display: none; */
   position: absolute;
+  background: mintcream;
   top: 0;
   left: 0;
   width: 100%;
@@ -457,8 +476,119 @@ a.button:hover {
   z-index: 1;
 }
 
-.welcome-modal p {
-  font: 'Ubuntu', sans-serif;
+.user-form-inner {
+  background-image: url("../swish2.svg");
+  background-repeat: no-repeat;
+  background-size: 170% 100%;
+  background-position: bottom;
+  animation: fadeIn 2.5s;
+  max-height: 40rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-/*# sourceMappingURL=styles.css.map */
+.welcome-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  margin-top: 0;
+}
+
+#name-input {
+  height: 2rem;
+  width: 10rem;
+  border: none;
+  border-radius: 5px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#name-input:focus {
+  background: #dce5e1;
+  outline: none;
+  caret-color: #c4ccc8;
+}
+
+#name-input:active {
+  background: #dce5e1;
+}
+
+#user-button {
+  height: 2rem;
+  width: 4rem;
+  border: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 1px solid #c4ccc8;
+  background-color: mintcream;
+  margin: 0.5rem;
+}
+
+#user-button:hover {
+  cursor: pointer;
+  background-color: #dce5e1;
+}
+
+.welcome-modal p {
+  font: 'Ubuntu', sans-serif;
+  margin: 0.75rem;
+  margin-top: 0;
+  text-align: center;
+}
+
+.welcome-form {
+  width: 100%;
+  height: calc(100% - 1em);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-form-greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-form-greeting-text {
+  border-right: solid 3px rgba(0,255,0,.75);
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: 'Ubuntu', sans-serif;  
+  font-size: 1rem;
+  color: black;
+  margin: 0 auto;
+}
+
+/* Animation */
+.welcome-form-greeting-text {
+  animation: animated-text 4s steps(50,end) 1s 1 normal both,
+             animated-cursor 700ms steps(50,end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 605px;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-right-color: #c4ccc8;}
+  to{border-right-color: transparent;}
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}

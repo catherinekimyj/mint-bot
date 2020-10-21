@@ -508,9 +508,13 @@ var Botkit = {
         greetingButton.onclick = (e) => {
             e.preventDefault();
             welcomeModal.style.display = "none";
-            visitor = visitorInput.value;
-            window.example = visitor;
-            document.getElementById("menu-info").innerHTML = visitor;
+
+            if (visitorInput.value === "") {
+                document.getElementById("menu-info-greeting").innerHTML = "Welcome!"
+            } else {
+                visitor = visitorInput.value;
+                document.getElementById("menu-info-name").innerHTML = visitor;
+            }
         }
     Botkit.boot();
 })();
