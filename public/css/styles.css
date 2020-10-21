@@ -201,8 +201,15 @@ a.button:hover {
   font-family: "helvetica", sans-serif;
 }
 #message_window .disconnected {
-  background: #FFFFCC;
-  padding: 0.25rem;
+  transition: fadeIn 2s;
+  background: #dcffed;
+  position: absolute;
+  font-family: "Ubuntu", sans-serif;
+  top: 41%;
+  color: #494c4b;
+  padding: 2rem;
+  border-radius: 5rem;
+  display: block;
 }
 #message_window.connected .disconnected {
   display: none;
@@ -214,9 +221,14 @@ a.button:hover {
   display: none;
 }
 #message_window.offline .offline {
-  background: #FF0000;
+  transition: fadeIn 2s;
+  background: #494c4b;
+  position: absolute;
+  font-family: "Ubuntu", sans-serif;
+  top: 41%;
   color: #FFF;
-  padding: 0.25rem;
+  padding: 2rem;
+  border-radius: 5rem;
   display: block;
 }
 
