@@ -3,6 +3,7 @@
  * Licensed under the MIT License.
  */
 module.exports = function(controller) {
+  var json = require("./resume.json");
 
     if (controller.adapter.name === 'Web Adapter') {
 
@@ -79,7 +80,7 @@ module.exports = function(controller) {
           "message",
           async (bot, message) => {
             await bot.reply(message, {
-              text: "Catherine",
+              text: `${json.basics.name}`,
               quick_replies: [
                 {
                   title: "Description",
@@ -139,8 +140,7 @@ module.exports = function(controller) {
           "message",
           async (bot, message) => {
             await bot.reply(message, {
-              text:
-                "Software Engineer | Web Development Javascript Ruby Rails React Redux Git Express.js Node.js PostgreSQL MongoDB AWS CSS/SCSS HTML",
+              text: `${json.basics.description}`,
               quick_replies: [
                 {
                   title: "Name",
@@ -260,8 +260,7 @@ module.exports = function(controller) {
           "message",
           async (bot, message) => {
             await bot.reply(message, {
-              text:
-                "I am a designer turned software engineer who believes that exquisite code not only outputs a product that is user-friendly, comprehensive, and functional, such values are held within the visual aspects of the lines of code, as well. I am adaptable, open-minded, and value all learning experiences. With prior managerial skills with past employers, I am always a team player and believe in rising up together rather than holding a win-lose mindset. ",
+              text: `${json.basics.summary}`,
               quick_replies: [
                 {
                   title: "Name",
@@ -502,8 +501,7 @@ module.exports = function(controller) {
           "message",
           async (bot, message) => {
             await bot.reply(message, {
-              text:
-                "LinkedIn: catherinekimyj, https://www.linkedin.com/in/catherinekimyj/ ",
+              text: `${json.basics.profiles[0].network} , ${json.basics.profiles[0].username}, ${json.basics.profiles[0].url}`,
               quick_replies: [
                 {
                   title: "Name",

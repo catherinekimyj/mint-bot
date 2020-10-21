@@ -1,5 +1,4 @@
 {
-    "$schema": "https://json.schemastore.org/resume",
     "basics": {
         "name": "Catherine Kim",
         "description": "Software Engineer | Web Development Javascript Ruby Rails React Redux Git Express.js Node.js PostgreSQL MongoDB AWS CSS/SCSS HTML",
@@ -35,7 +34,7 @@
             "highlights": [],
             "position": "Founder",
             "startDate": "2017-08-31",
-            "summary": "Shifting the way we consume and contribute to fashion, Forsythia was built on the foundation of producing clothing through environmentally and socially conscious processes. As the founder and designer of the sustainable luxury brand, I worked closely with showrooms and PR agencies, and managed contractors and freelancers. I also managed and modified the code for the company website.\n\nForsythia has been featured in: Vogue China, Latest magazine, Revs magazine, Shuba magazine, Schon magazine, ONE magazine, and numerous others.",
+            "summary": "Shifting the way we consume and contribute to fashion, Forsythia was built on the foundation of producing clothing through environmentally and socially conscious processes. As the founder and designer of the sustainable luxury brand, I worked closely with showrooms and PR agencies, and managed contractors and freelancers. I also managed and modified the code for the company website. Forsythia has been featured in: Vogue China, Latest magazine, Revs magazine, Shuba magazine, Schon magazine, ONE magazine, and numerous others.",
             "url": ""
         },
         {
@@ -97,8 +96,8 @@
             "institution": "App Academy",
             "area": "Computer Software Engineering",
             "studyType": "",
-            "startDate": "2020-12-31",
-            "endDate": "2020-12-31",
+            "startDate": "2020-03-16",
+            "endDate": "2020-07-03",
             "gpa": "",
             "courses": []
         },
