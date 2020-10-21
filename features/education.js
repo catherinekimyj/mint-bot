@@ -1,4 +1,5 @@
 module.exports = function (controller) {
+  var json = require("./resume.json");
   if (controller.adapter.name === "Web Adapter") {
     controller.hears(
       async (message) =>
@@ -8,16 +9,15 @@ module.exports = function (controller) {
       async (bot, message) => {
         await bot.reply(
           message,
-          "App Academy, Software Engineering. 03/16/2020 - 07/03/2020 "
+          `${json.education[0].institution}, ${json.education[0].area}. ${json.education[0].startDate} - ${json.education[0].startDate}`
         );
 
         await bot.reply(
           message,
-          "Fashion Institute of Technology, Fashion/Apparel Design. 12/31/2009 - 12/31/2013"
+          `${json.education[1].institution}, ${json.education[1].area}. ${json.education[1].startDate} - ${json.education[1].startDate}`
         );
         await bot.reply(message, {
-          text:
-            "James Madison University, Dietetics and Clinical Nutrition Services. 12/31/2007 - 12/31/2009",
+          text: `${json.education[2].institution}, ${json.education[2].area}. ${json.education[2].startDate} - ${json.education[2].startDate}`,
           quick_replies: [
             {
               title: "Basic",

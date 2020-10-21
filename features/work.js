@@ -1,4 +1,5 @@
 module.exports = function (controller) {
+  var json = require("./resume.json");
   if (controller.adapter.name === "Web Adapter") {
     controller.hears(
       async (message) =>
@@ -9,22 +10,22 @@ module.exports = function (controller) {
       async (bot, message) => {
         await bot.reply(
           message,
-          "- First Creative Patternmaker at Marchesa from 11/30/2018 till 11/30/2019. I drafted patterns for 10+ garments per season for six collections per year, and supervised the process and execution. Technical fit and errors were analyzed and discussed each season. I shared the task in managing a team of 6+ sewers and interns, and mentored the junior pattern maker in coaching technical and non-technical skills in the atelier."
+          `- ${json.work[0].position} at ${json.work[0].name}. ${json.work[0].summary}. ${json.work[0].startDate} - ${json.work[0].endDate} `
         );
 
         await bot.reply(
           message,
-          "- Assistant Designer for Christian Siriano from 12/31/2014 till 03/31/2017. I was working closely with founder Christian Siriano, I assisted in design execution and patterned garments for five collections per year, each collection consisting of an average of 50 looks. I drafted patterns of custom garments for private clients and celebrities, managed sewers and interns, and communicated with the production team for efficient garment production."
+          `- ${json.work[1].position} at ${json.work[1].name}. ${json.work[1].summary}. ${json.work[1].startDate} - ${json.work[1].endDate} `
         );
 
         await bot.reply(
           message,
-          "- Design Inter for Badgley Mischka from 09/30/2012 till 02/28/2013 and Design Inter for Anna Sui from 09/30/2010 till 12/31/2010 "
+          `- ${json.work[2].position} at ${json.work[2].name}. ${json.work[2].summary}. ${json.work[2].startDate} - ${json.work[2].endDate} `
         );
 
         await bot.reply(message, {
           text:
-            "- A founder of Forsythia Studio from 08/31/2017 till 12/31/2019. My responsibilities were shifting the way we consume and contribute to fashion, Forsythia was built on the foundation of producing clothing through environmentally and socially conscious processes. As the founder and designer of the sustainable luxury brand, I worked closely with showrooms and PR agencies, and managed contractors and freelancers. I also managed and modified the code for the company website. Forsythia has been featured in: Vogue China, Latest magazine, Revs magazine, Shuba magazine, Schon magazine, ONE magazine, and numerous others. ",
+            `- ${json.work[3].position} at ${json.work[3].name}. ${json.work[3].summary}. ${json.work[3].startDate} - ${json.work[3].endDate} `,
           quick_replies: [
             {
               title: "Basic",
