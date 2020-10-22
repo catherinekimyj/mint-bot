@@ -38,7 +38,7 @@ body {
   padding: 1rem;
   padding-right: 0;
   padding-left: 0;
-  height: 100%;
+  height: 800px;
   width: 100%;
   min-height: 6rem;
   max-width: 1000px;
@@ -64,11 +64,13 @@ body {
 
 #menu-info {
   font-family: 'Allura', cursive;
-  width: 75%;
+  width: 70%;
+  padding-right: 3rem;
+  max-width: 1000px;
   text-align: right;
   font-size: 3.5rem;
   position: absolute;
-  top: 3.2rem;
+  top: 2.6rem;
   color: #494c4b;
 }
 
@@ -233,7 +235,8 @@ a.button:hover {
 }
 
 .powered_by {
-  margin-top: 0.5rem;
+  position: relative;
+  top: 70px;
   flex-shrink: 0;
   text-align: center;
   text-transform: uppercase;
@@ -392,7 +395,7 @@ a.button:hover {
 #message_window #message_replies ul {
   list-style-type: none;
   margin: 0px auto;
-  padding: 0;
+  padding: 10px;
 }
 #message_window #message_replies ul li {
   display: inline-block;
@@ -419,12 +422,13 @@ a.button:hover {
   display: table;
   margin: 0 auto;
   position: relative;
+  padding: 1rem;
 }
 .typing-indicator span {
   height: 5px;
   width: 5px;
   float: left;
-  margin: 0 1px;
+  margin: 0 3px;
   background-color: #333;
   display: block;
   border-radius: 50%;
@@ -432,6 +436,7 @@ a.button:hover {
 }
 .typing-indicator span:nth-of-type(1) {
   animation: 1s blink infinite 0.3333s;
+  padding-right: 0.25rem;
 }
 .typing-indicator span:nth-of-type(2) {
   animation: 1s blink infinite 0.6666s;
@@ -489,11 +494,7 @@ a.button:hover {
 }
 
 .user-form-inner {
-  background-image: url("../swish2.svg");
-  background-repeat: no-repeat;
-  background-size: 170% 100%;
-  background-position: bottom;
-  animation: fadeIn 2.5s;
+  animation: fadeInLeft 3s;
   max-height: 40rem;
   overflow: hidden;
   display: flex;
@@ -535,14 +536,14 @@ a.button:hover {
 #user-button {
   height: 2rem;
   width: 4rem;
-  border: none;
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   border-radius: 5px;
-  border: 1px solid #c4ccc8;
+  border: 2px solid #c4ccc8;
   background-color: mintcream;
   margin: 0.5rem;
+  outline: none;
 }
 
 #user-button:hover {
@@ -558,12 +559,18 @@ a.button:hover {
 }
 
 .welcome-form {
+  background-image: url("../swish2.png");
+  background-repeat: no-repeat;
+  background-size: 170% 65%;
+  background-position: bottom;
+  animation: fadeIn 4s;
   width: 100%;
   height: calc(100% - 1em);
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 .welcome-form-greeting {
   display: flex;
@@ -586,6 +593,28 @@ a.button:hover {
              animated-cursor 700ms steps(50,end) infinite;
 }
 
+@keyframes fadeInLeft {
+  0% {
+     opacity: 0;
+     transform: translateX(-50px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+}  
+
+@keyframes fadeInUp {
+  0% {
+     opacity: 0;
+     transform: translateY(-80px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+}  
+
 /* text animation */
 
 @keyframes animated-text{
@@ -603,4 +632,666 @@ a.button:hover {
 @keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
+}
+
+@keyframes fadeOut {
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
+
+
+/* navbar */
+
+.chat-nav-container {
+  display: flex;
+  justify-content: center;
+  padding-left: 35px;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+#navbar {
+  align-self: flex-end;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 45px;
+  padding-left: 10px;
+}
+
+#navbar div button {
+  border: solid 3px #dce5e1;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 25%;
+  outline: none;
+  background: none;
+  color: #494c4b;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+#navbar div {
+  text-align: center;
+}
+
+#navbar div:hover {
+  cursor: pointer;
+}
+
+#navbar button:hover {
+  cursor: pointer;
+  background-color: #dce5e1;
+}
+
+#basic, #work, #education, #skills, #projects, #contact {
+  position: relative;
+}
+
+#basic:hover #basic-desc {
+  visibility: visible;
+  animation: fadeIn ease 0.5s;
+}
+
+#work:hover #work-desc {
+  visibility: visible;
+  animation: fadeIn ease 0.5s;
+}
+
+#education:hover #education-desc {
+  visibility: visible;
+  animation: fadeIn ease 0.5s;
+}
+
+#skills:hover #skills-desc {
+  visibility: visible;
+  animation: fadeIn ease 0.5s;
+}
+
+#projects:hover #projects-desc {
+  visibility: visible;
+  animation: fadeIn ease 0.5s;
+}
+
+#contact:hover #contact-desc {
+  visibility: visible;
+  animation: fadeIn ease 0.5s;
+}
+
+#basic-desc {
+  visibility: hidden;
+  width: 100px;
+  height:  40px;
+  background-color: mintcream;
+  color: black;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  opacity: 0.8;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  position: absolute;
+  left: -120px;
+  top: 15px;
+  z-index: 1;
+  scale: 1;
+}
+
+#work-desc {
+  visibility: hidden;
+  width: 100px;
+  height:  40px;
+  background-color: mintcream;
+  color: black;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  opacity: 0.8;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  position: absolute;
+  left: -120px;
+  top: 15px;
+  z-index: 1;
+  scale: 1;
+}
+
+#education-desc {
+  visibility: hidden;
+  width: 100px;
+  height:  40px;
+  background-color: mintcream;
+  color: black;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  opacity: 0.8;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  position: absolute;
+  left: -120px;
+  top: 15px;
+  z-index: 1;
+  scale: 1;
+}
+
+#skills-desc {
+  visibility: hidden;
+  width: 100px;
+  height:  40px;
+  background-color: mintcream;
+  color: black;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  opacity: 0.8;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  position: absolute;
+  left: -120px;
+  top: 15px;
+  z-index: 1;
+  scale: 1;
+}
+
+#projects-desc {
+  visibility: hidden;
+  width: 100px;
+  height:  40px;
+  background-color: mintcream;
+  color: black;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  opacity: 0.8;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  position: absolute;
+  left: -120px;
+  top: 15px;
+  z-index: 1;
+  scale: 1;
+}
+
+#contact-desc {
+  visibility: hidden;
+  width: 100px;
+  height:  40px;
+  background-color: mintcream;
+  color: black;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  opacity: 0.8;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  position: absolute;
+  left: -120px;
+  top: 15px;
+  z-index: 1;
+  scale: 1;
+}
+
+/* landing page */
+#logo-bot {
+  font-family: "Allura", cursive;
+  font-size: 3.25rem;
+  position: relative;
+  left: -11px;
+  color: #abb2af;
+}
+
+#logo-mint {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  color: #c4ccc8;
+}
+
+#landing-body {
+  background: white;
+  padding: 0;
+}
+
+#landing-main {
+  position: relative;
+  text-align: center;
+}
+
+#main-catch {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#landing-navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  padding-top: 0px;
+  justify-content: space-between;
+  animation: slideDown 3s;
+}
+
+#landing-navi {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  width: 230px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#landing-navi span {
+   font-size: 15px;
+   font-weight: bold;
+   letter-spacing: 1;
+   color: #7a7f7d;
+}
+
+#landing-navi span:hover {
+  cursor: pointer;
+  letter-spacing: 2;
+  transition: 0.5s;
+}
+
+#landing-footer {
+  position: absolute;
+  bottom: 0;
+}
+
+#mintbot {
+  animation: spin 2.5s;
+  animation-delay: 3s;
+  height:   400px;
+  /* position: absolute;
+  height: 23rem;
+  top: calc(50% - 15rem);
+  right: 18rem; */
+
+}
+
+#main-sda {
+  font-family: "Allura", cursive;
+  /* font-family: "Ubuntu", sans-serif; */
+  font-size: 2.25rem;
+  color: #abb2af;
+  /* text-transform: uppercase; */
+  
+}
+
+#main-toyjs {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  color: #c4ccc8;
+  position: relative;
+  top: -13px;
+  right: -80px;
+}
+
+#enter-bot {
+  text-transform: uppercase;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 15px;
+  border: 3px solid #dce5e1;
+  margin-left: 80px;
+  font-size: 0.85rem;
+  color: #7a7f7d;
+  font-weight: bold;
+  letter-spacing: 1;
+  z-index: 98;
+}
+
+#enter-bot:hover {
+    background-color: #dce5e1;
+}
+
+#enter-bot-link {
+  text-decoration: none;
+}
+
+@keyframes spin {
+  from {transform:rotateY(0deg);}
+  to {transform:rotateY(360deg);}
+}
+
+@keyframes slideUp {
+  0% {
+     opacity: 0;
+     transform: translateY(150px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+}  
+
+@keyframes slideDown {
+  0% {
+     opacity: 0;
+     transform: translateY(-150px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+}  
+
+
+/* landing page about and creators pages */
+
+#landing-about {
+  display: none;
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  border-radius: 25px;
+  background-color: #e1e5e2;
+  padding: 15px;
+  z-index: 99;
+  animation: fadeIn 1s;
+}
+
+#landing-about-container {
+  display: flex;
+  flex-direction: row;
+  height: 55%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#landing-about-top {
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 15px;
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  font-size: 15.5px;
+  color: #7a7f7d;
+  line-height: 1.5;
+}
+
+#about-mintbot {
+  margin: 20px;
+  width: 40%;
+  text-align: center;
+}
+
+#about-mintbot i {
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+#about-tech {
+  margin: 20px;
+  margin-left: 60px;
+  width: 40%;
+  text-align: center;
+}
+
+#about-tech ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+#about-tech i {
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+#about-botkit {
+  position: relative;
+  left: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  margin-right: 0;
+}
+
+#about-botkit i {
+  font-size: 35px;
+  padding-bottom: 10px;
+  color:  #7a7f7d;
+}
+
+.about-botkit-info {
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  font-size: 15.5px;
+  color: #7a7f7d;
+  line-height: 1.5;
+}
+
+#about-title {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  font-size: 17px;
+  letter-spacing: 1;
+  font-weight: bold;
+  color: #7a7f7d;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+#about-title span {
+  width: 100%;
+  text-align: center;
+  font-family: "Allura", cursive;
+  font-size: 32px;
+  position: relative;
+  left: -3px;
+  text-transform: capitalize;
+}
+
+#about-exit {
+  position: relative;
+  left: -5px;
+  top: -60px;
+  color: #7a7f7d;
+}
+
+#about-exit:hover {
+  color: #c4ccc8;
+  cursor: pointer;
+}
+
+
+
+#landing-creators {
+  display: none;
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  border-radius: 25px;
+  background-color: #e1e5e2;
+  padding: 15px;
+  z-index: 99;
+  animation: fadeIn 1s;
+}
+
+#landing-creators-container {
+  display: flex;
+  flex-direction: row;
+  align-items: space-around;
+  height: 100%;
+}
+
+#creators-exit {
+  position: relative;
+  left: -5px;
+  color: #7a7f7d;
+}
+
+#creators-exit:hover {
+  color: #c4ccc8;
+  cursor: pointer;
+}
+
+#creators-emina, #creators-cat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+#creators-emina {
+  position: relative;
+  margin: 20px;
+  /* top: 10px; */
+}
+
+#creator-name {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  font-size: 15.5px;
+  letter-spacing: 1;
+  font-weight: bold;
+  color: #7a7f7d;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#creators-emina img, #creators-cat img {
+  margin-top: 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  border: 3px solid #c4ccc8;
+}
+
+#creator-desc {
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  font-size: 15.5px;
+  color: #7a7f7d;
+  line-height: 1.5;
+}
+
+#creator-icons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+#creator-icons a {
+  margin: 10px;
+  font-size: 26px;
+  color: #7a7f7d;
+}
+
+#creator-icons a:hover {
+  color: #c4ccc8;
+}
+
+/* tutorial */
+
+#tutorial-page {
+  display: none;
+  animation: fadeIn 1s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4b4c4b;
+  opacity: 0.5;
+}
+
+#tutorial-button {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  border: solid 3px #dce5e1;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 25%;
+  outline: none;
+  background: none;
+  color: #494c4b;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tutorial-button:hover {
+cursor: pointer;
+background-color: #dce5e1;
+}
+
+#tutorial-button:hover #tutorial-desc {
+  visibility: visible;
+  animation: fadeIn ease 0.5s;
+}
+
+#tutorial-desc {
+  visibility: hidden;
+  width: 100px;
+  height:  40px;
+  background-color:  white;
+  color: black;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  opacity: 0.8;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  position: absolute;
+  left: 60px;
+  top: 0px;
+  z-index: 1;
+  scale: 1;
+}
+
+#tutorial-exit {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: white;
+}
+
+#tutorial-exit:hover {
+  color: #c4ccc8;
+  cursor: pointer;
 }

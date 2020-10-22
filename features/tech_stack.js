@@ -223,7 +223,6 @@ module.exports = function (controller) {
         const progSkill = json.skills;
         let stack = progSkill.find((obj) => obj["stack"]);
         let stackList = stack.stack;
-        console.log(stackList);
 
         await bot.reply(
           message, 

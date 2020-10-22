@@ -507,7 +507,8 @@ var Botkit = {
 (function() {
         greetingButton.onclick = (e) => {
             e.preventDefault();
-            welcomeModal.style.display = "none";
+            welcomeModal.style.animation = "fadeOut 2s";
+            setTimeout(function() { welcomeModal.style.display = "none"}, 2000);
 
             if (visitorInput.value === "") {
                 document.getElementById("menu-info-greeting").innerHTML = "Welcome!"

@@ -9,6 +9,7 @@
     "dev": "webpack --mode development"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "botbuilder-adapter-web": "^1.0.9",
     "botbuilder-storage-mongodb": "^0.9.5",
     "botkit": "^4.10.0",
