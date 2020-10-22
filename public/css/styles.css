@@ -63,14 +63,14 @@ body {
 }
 
 #menu-info {
-  font-family: 'Allura', cursive;
+  font-family: 'Ubuntu', sans-serif;
   width: 70%;
   padding-right: 3rem;
   max-width: 1000px;
   text-align: right;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   position: absolute;
-  top: 2.6rem;
+  top: 3.1rem;
   color: #494c4b;
 }
 
