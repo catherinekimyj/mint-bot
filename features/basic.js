@@ -70,81 +70,16 @@ module.exports = function(controller) {
                   title: "References",
                   payload: "references",
                 },
+                {
+                  title: "Ideal company",
+                  payload: "ideal"
+                }
               ],
             });
           }
         );
 
-        controller.hears(
-          async (message) => message.text.toLowerCase().includes("name"),
-          "message",
-          async (bot, message) => {
-            await bot.reply(message,`My name is ${json.basics.name}`)
-
-            setTimeout(async () => {
-              await bot.changeContext(message.reference);
-              await bot.reply(message, {
-                text: "What would you like to know about me?",
-                quick_replies: [
-                  {
-                    title: "Email",
-                    payload: "email",
-                  },
-                  {
-                    title: "Phone number",
-                    payload: "phone",
-                  },
-                  {
-                    title: "Description",
-                    payload: "description",
-                  },
-                  {
-                    title: "Summary",
-                    payload: "summary",
-                  },
-                  {
-                    title: "Location",
-                    payload: "location",
-                  },
-                  {
-                    title: "Profiles",
-                    payload: "profiles",
-                  },
-                  {
-                    title: "Work",
-                    payload: "work",
-                  },
-                  {
-                    title: "Volunteer",
-                    payload: "volunteer",
-                  },
-                  {
-                    title: "Education",
-                    payload: "education",
-                  },
-                  {
-                    title: "Skills",
-                    payload: "skills",
-                  },
-                  {
-                    title: "Languages",
-                    payload: "languages",
-                  },
-                  {
-                    title: "Projects",
-                    payload: "projects",
-                  },
-                  {
-                    title: "References",
-                    payload: "references",
-                  },
-                ],
-              });
-            }, 1500);
-          }
-
-        );
-
+        
         controller.hears(
           async (message) => message.text.toLowerCase().includes("description"),
           "message",
@@ -203,6 +138,10 @@ module.exports = function(controller) {
                   {
                     title: "References",
                     payload: "references",
+                  },
+                  {
+                    title: "Ideal company",
+                    payload: "ideal",
                   },
                 ],
               });
@@ -348,75 +287,8 @@ module.exports = function(controller) {
             setTimeout(async() => {
               await bot.changeContext(message.reference);
               await bot.reply(message, {
-              text: "Find out more about me!:)",
-              quick_replies: [
-                {
-                  title: "Name",
-                  payload: "name",
-                },
-                {
-                  title: "Email",
-                  payload: "email",
-                },
-                {
-                  title: "Description",
-                  payload: "description",
-                },
-                {
-                  title: "Location",
-                  payload: "location",
-                },
-                {
-                  title: "Profiles",
-                  payload: "profiles",
-                },
-                {
-                  title: "Back",
-                  payload: "basic",
-                },
-                {
-                  title: "Work",
-                  payload: "work",
-                },
-                {
-                  title: "Volunteer",
-                  payload: "volunteer",
-                },
-                {
-                  title: "Education",
-                  payload: "education",
-                },
-                {
-                  title: "Skills",
-                  payload: "skills",
-                },
-                {
-                  title: "Languages",
-                  payload: "languages",
-                },
-                {
-                  title: "Projects",
-                  payload: "projects",
-                },
-              ],
-            })}, 1250);
-          }
-        );
-
-        controller.hears(
-          async (message) => message.text.toLowerCase().includes("location"),
-          "message",
-          async (bot, message) => {
-            await bot.reply(message, "I am currently living and looking for work in New York, NY")
-            setTimeout(async() => {
-              await bot.changeContext(message.reference);
-              await bot.reply(message, {
                 text: "Find out more about me!:)",
                 quick_replies: [
-                  {
-                    title: "Name",
-                    payload: "name",
-                  },
                   {
                     title: "Email",
                     payload: "email",
@@ -426,16 +298,12 @@ module.exports = function(controller) {
                     payload: "description",
                   },
                   {
-                    title: "Summary",
-                    payload: "summary",
+                    title: "Location",
+                    payload: "location",
                   },
                   {
                     title: "Profiles",
                     payload: "profiles",
-                  },
-                  {
-                    title: "Back",
-                    payload: "basic",
                   },
                   {
                     title: "Work",
@@ -461,10 +329,136 @@ module.exports = function(controller) {
                     title: "Projects",
                     payload: "projects",
                   },
+                  {
+                    title: "Ideal company",
+                    payload: "ideal",
+                  },
+                ],
+              });}, 1250);
+          }
+        );
+
+        controller.hears(
+          async (message) => message.text.toLowerCase().includes("location"),
+          "message",
+          async (bot, message) => {
+            await bot.reply(message, "I am currently living and looking for work in New York, NY")
+            setTimeout(async() => {
+              await bot.changeContext(message.reference);
+              await bot.reply(message, {
+                text: "Find out more about me!:)",
+                quick_replies: [
+                  {
+                    title: "Email",
+                    payload: "email",
+                  },
+                  {
+                    title: "Description",
+                    payload: "description",
+                  },
+                  {
+                    title: "Summary",
+                    payload: "summary",
+                  },
+                  {
+                    title: "Profiles",
+                    payload: "profiles",
+                  },
+                  {
+                    title: "Work",
+                    payload: "work",
+                  },
+                  {
+                    title: "Volunteer",
+                    payload: "volunteer",
+                  },
+                  {
+                    title: "Education",
+                    payload: "education",
+                  },
+                  {
+                    title: "Skills",
+                    payload: "skills",
+                  },
+                  {
+                    title: "Languages",
+                    payload: "languages",
+                  },
+                  {
+                    title: "Projects",
+                    payload: "projects",
+                  },
+                  {
+                    title: "Ideal company",
+                    payload: "ideal",
+                  },
                 ],
               });
             }, 1250)
           })
+
+          controller.hears(
+            async (message) =>
+              message.text.toLowerCase().includes("ideal") ||
+              message.text.toLowerCase().includes("dream"),
+            "message",
+            async (bot, message) => {
+              await bot.reply(
+                message,
+                "My ideal company would present exciting challenges that allow me to use my interest in and experience with growing sustainability efforts. Google was one of the companies that I had dreamed about ever since I was in high school."
+              );
+              setTimeout(async () => {
+                await bot.changeContext(message.reference);
+                await bot.reply(message, {
+                  text: "Find out more about me!:)",
+                  quick_replies: [
+                    {
+                      title: "Email",
+                      payload: "email",
+                    },
+                    {
+                      title: "Description",
+                      payload: "description",
+                    },
+                    {
+                      title: "Summary",
+                      payload: "summary",
+                    },
+                    {
+                      title: "Profiles",
+                      payload: "profiles",
+                    },
+                    {
+                      title: "Work",
+                      payload: "work",
+                    },
+                    {
+                      title: "Volunteer",
+                      payload: "volunteer",
+                    },
+                    {
+                      title: "Education",
+                      payload: "education",
+                    },
+                    {
+                      title: "Skills",
+                      payload: "skills",
+                    },
+                    {
+                      title: "Languages",
+                      payload: "languages",
+                    },
+                    {
+                      title: "Projects",
+                      payload: "projects",
+                    },
+                  ],
+                });
+              }, 1250);
+            }
+          );
+
+
 
     }
 

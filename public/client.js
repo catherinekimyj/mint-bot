@@ -468,7 +468,7 @@ var Botkit = {
                   setTimeout(async () => {
                     var image = document.createElement("img");
                     image.width = '600';
-                    image.height = '400';
+                    image.height = '600';
                     image.src = message.image;
                     that.message_list.appendChild(image);
                   }, 1250);

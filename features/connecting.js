@@ -7,7 +7,11 @@ module.exports = function (controller) {
         bot.reply(message, {
           isFirst: true,
           text:
-            "Hello and welcome! My name is " + json.basics.name + ". I am currently " + json.basics.jobStatus + ". Please feel free to ask me anything.",
+            "Hello and welcome! My name is " +
+            json.basics.name +
+            ". I am currently " +
+            json.basics.jobStatus +
+            ". Please feel free to ask me anything.",
           quick_replies: [
             {
               title: "Email",
@@ -15,7 +19,11 @@ module.exports = function (controller) {
             },
             {
               title: "Phone number",
-              payload: 'phone',
+              payload: "phone",
+            },
+            {
+              title: "Portfolio site",
+              payload: "portfolio",
             },
             {
               title: "Description",
@@ -59,8 +67,12 @@ module.exports = function (controller) {
             },
             {
               title: "References",
-              payload: "references"
-            }
+              payload: "references",
+            },
+            {
+              title: "Ideal company",
+              payload: "ideal",
+            },
           ],
         });
       }
