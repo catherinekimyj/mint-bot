@@ -3,9 +3,9 @@ module.exports = function (controller) {
   if (controller.adapter.name === "Web Adapter") {
     controller.hears(
       async (message) =>
-        (message.text && message.text.toLowerCase() === "work") ||
-        (message.text && message.text.toLowerCase() === "experience") ||
-        (message.text && message.text.toLowerCase() === "past employment"),
+        (message.text.toLowerCase().includes("work")) || 
+        (message.text.toLowerCase().includes("experience")) ||
+        (message.text.toLowerCase().includes("past employment")),
       "message",
       async (bot, message) => {
         await bot.reply(

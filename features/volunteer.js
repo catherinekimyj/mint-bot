@@ -2,7 +2,7 @@ module.exports = function (controller) {
   var json = require("./resume.json");
   if (controller.adapter.name === "Web Adapter") {
     controller.hears(
-      async (message) => message.text && message.text.toLowerCase() === "volunteer",
+      async (message) => message.text.toLowerCase().includes("volunteer"),
       "message",
       async (bot, message) => {
         await bot.reply(message, {

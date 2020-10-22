@@ -3,8 +3,8 @@ module.exports = function (controller) {
   if (controller.adapter.name === "Web Adapter") {
     controller.hears(
       async (message) =>
-        (message.text && message.text.toLowerCase() === "education") ||
-        (message.text && message.text.toLowerCase() === "school"),
+        (message.text.toLowerCase().includes("education")) ||
+        (message.text.toLowerCase().includes("school")),
       "message",
       async (bot, message) => {
         await bot.reply(

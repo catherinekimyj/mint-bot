@@ -23,12 +23,14 @@ const detectTypo = function (string, tech_stack_keywords) {
 
   return suggestedWords;
 };
+// [word1 = lenguage, word2 = language, length = 7]
+// [word1 = sell, word2 = skill, length = 4]
 
 const compareWords = function (word1, word2, length) {
   let charsCount = 0;
-  let charsMatchCount = length - 2;
-  let word2Split = word2.split("").sort();
-  let word1Split = word1.split("").sort();
+  let charsMatchCount = length - 2; // 5
+  let word2Split = word2.split("").sort(); // [ a,a,e,g,g,l,n,u ]
+  let word1Split = word1.split("").sort(); // [ a,e,e,g,g,l,n,u ]
 
   if (charsMatchCount < 3) {
     return undefined;
@@ -36,16 +38,26 @@ const compareWords = function (word1, word2, length) {
 
   for (let k = 0; k < word1Split.length; k++) {
     let letter1 = word1Split[k];
-    if (word2Split.includes(letter1)) {
-      charsCount += 1;
+    let letter2 = word2Split[k]
+    // if (word2Split.includes(letter1)) {
+    //   charsCount += 1;
+    // }
+    if (letter2 === letter1) {
+      charsCount++;
     }
   }
 
-  if (charsCount >= charsMatchCount) {
-    return word2;
+  if (charsCount >= word2.length - 1) {
+    return word2; 
   } else {
     return undefined;
   }
+
+  // if (charsCount >= charsMatchCount) {
+  //   return word2;
+  // } else {
+  //   return undefined;
+  // }
 };
 
 // stringify list helper function 
@@ -75,12 +87,8 @@ const stringList = function (array) {
 module.exports = function (controller) {
   controller.hears(
     async (message) =>
-      (message.text &&
-        message.text.toLowerCase().includes("language") &&
-        message.text.toLowerCase().includes("speak")) ||
-      (message.text &&
-        message.text.toLowerCase().includes("language") &&
-        message.text.toLowerCase().includes("spoken")) ||
+      (message.text.toLowerCase().includes("language") && message.text.toLowerCase().includes("speak")) ||
+      (message.text.toLowerCase().includes("language") && message.text.toLowerCase().includes("spoken")) ||
       (message.text &&
         detectTypo(message.text.toLowerCase(), ["spoken", "language"]).includes(
           "language"
@@ -191,8 +199,9 @@ module.exports = function (controller) {
 
   controller.hears(
     async (message) =>
-      message.text &&
-      detectTypo(message.text.toLowerCase(), ["language"]).includes("language"),
+      (message.text.toLowerCase().includes("language")) ||
+      (message.text &&
+      detectTypo(message.text.toLowerCase(), ["language"]).includes("language")),
     "message",
 
     async (bot, message) => {
