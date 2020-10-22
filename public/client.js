@@ -405,12 +405,13 @@ var Botkit = {
 
         });
 
-        that.on("message", function () {
-        
-            setTimeout(async () => {
-              var audio = new Audio("beep.mp3");
-              audio.play();
-            }, 1000);
+        that.on("message", function (message) {
+            if (!message.isFirst) {
+                setTimeout(async () => {
+                var audio = new Audio("beep.mp3");
+                audio.play();
+                }, 1000);
+            }
         });
 
         that.on('message', function (message) {
@@ -450,6 +451,30 @@ var Botkit = {
 
                   that.replies.appendChild(list);
                 }, 1000);
+
+                if (message.link) {
+                    setTimeout(async () => {
+                      var link = document.createElement("a");
+                      link.className = "link";
+                      link.href = message.link;
+                      link.innerHTML = message.username;
+                      link.target = "_blank";
+                      that.message_list.appendChild(link);
+                    }, 1250);
+                    
+                }
+
+                if (message.image) {
+                  setTimeout(async () => {
+                    var image = document.createElement("img");
+                    image.className = "img";
+                    image.width = '600';
+                    image.height = '600';
+                    image.src = message.image;
+                    that.message_list.appendChild(image);
+                  }, 1250);
+                }
+
 
                 // uncomment this code if you want your quick replies to scroll horizontally instead of stacking
                 // var width = 0;

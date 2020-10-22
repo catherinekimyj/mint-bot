@@ -80,28 +80,30 @@ module.exports = function (controller) {
             message,
             "There are a few different ways to contact me or look into more information."
           );
-    
-          await bot.reply(message, {
-            text: "Here are your other options:",
-            quick_replies: [
-              {
-                title: "Email",
-                payload: "email",
-              },
-              {
-                title: "Phone",
-                payload: "phone",
-              },
-              {
-                title: "Portfolio site",
-                payload: "portfolio",
-              },
-              {
-                title: "Social media",
-                payload: "social media",
-              },
-            ],
-          });
+          setTimeout(async() => {
+            await bot.changeContext(message.reference);
+            await bot.reply(message, {
+              text: "Here are your other options:",
+              quick_replies: [
+                {
+                  title: "Email",
+                  payload: "email",
+                },
+                {
+                  title: "Phone",
+                  payload: "phone",
+                },
+                {
+                  title: "Portfolio site",
+                  payload: "portfolio",
+                },
+                {
+                  title: "Social media",
+                  payload: "social",
+                },
+              ],
+            });
+          }, 1250); 
         }
       );
 
@@ -115,23 +117,26 @@ module.exports = function (controller) {
     async (bot, message) => {
       await bot.reply(message, "You can email me at " + json.basics.email);
 
-      await bot.reply(message, {
-        text: "Here are your other options for contacting me:",
-        quick_replies: [
-          {
-            title: "Phone",
-            payload: "phone",
-          },
-          {
-            title: "Portfolio site",
-            payload: "portfolio",
-          },
-          {
-            title: "Social media",
-            payload: "social media",
-          },
-        ],
-      });
+      setTimeout(async() => {
+        await bot.changeContext(message.reference);
+        await bot.reply(message, {
+          text: "Here are your other options for contacting me:",
+          quick_replies: [
+            {
+              title: "Phone",
+              payload: "phone",
+            },
+            {
+              title: "Portfolio site",
+              payload: "portfolio",
+            },
+            {
+              title: "Social media",
+              payload: "social media",
+            },
+          ],
+        });
+    }, 1250);
     }
   );
 
@@ -144,24 +149,26 @@ module.exports = function (controller) {
 
     async (bot, message) => {
       await bot.reply(message, "You can call me at: " + json.basics.phone);
-
-      await bot.reply(message, {
-        text: "Here are your other options for contacting me:",
-        quick_replies: [
-          {
-            title: "Email",
-            payload: "email",
-          },
-          {
-            title: "Portfolio site",
-            payload: "portfolio",
-          },
-          {
-            title: "Social media",
-            payload: "social media",
-          },
-        ],
-      });
+      setTimeout(async() => {
+        await bot.changeContext(message.reference);
+        await bot.reply(message, {
+          text: "Here are your other options for contacting me:",
+          quick_replies: [
+            {
+              title: "Email",
+              payload: "email",
+            },
+            {
+              title: "Portfolio site",
+              payload: "portfolio",
+            },
+            {
+              title: "Social media",
+              payload: "social media",
+            },
+          ],
+        });
+      }, 1250);
     }
   );
 
@@ -172,28 +179,38 @@ module.exports = function (controller) {
     "message",
 
     async (bot, message) => {
-      await bot.reply(
-        message,
-        "My portfolio site can be found at " + json.basics.url
-      );
+        await bot.changeContext(message.reference);
+        await bot.reply(message, {
+          link: "http://catherinekim.me/",
+          username: "Catherine Kim",
+          quick_replies: [
+            {
+              title: "",
+              payload: "",
+            },
+          ],
+        });
 
-      await bot.reply(message, {
-        text: "Here are your other options for contacting me:",
-        quick_replies: [
-          {
-            title: "Email",
-            payload: "email",
-          },
-          {
-            title: "Phone",
-            payload: "phone",
-          },
-          {
-            title: "Social media",
-            payload: "social media",
-          },
-        ],
-      });
+        setTimeout(async () => {
+          await bot.changeContext(message.reference);
+          await bot.reply(message, {
+            text: "Here are your other options for contacting me:",
+            quick_replies: [
+              {
+                title: "Email",
+                payload: "email",
+              },
+              {
+                title: "Phone",
+                payload: "phone",
+              },
+              {
+                title: "Social media",
+                payload: "social media",
+              },
+            ],
+          });
+        }, 1250);
     }
   );
 
