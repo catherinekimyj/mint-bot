@@ -57,7 +57,7 @@ module.exports = function (controller) {
               },
             ],
           });
-        }, 1250); 
+        }, 1500); 
       }
     );
 
@@ -93,7 +93,7 @@ module.exports = function (controller) {
               },
             ],
           });
-        }, 1250);
+        }, 1500);
       }
     );
 
@@ -129,7 +129,7 @@ module.exports = function (controller) {
               },
             ],
           });
-        }, 1250);
+        }, 1500);
       }
     );
 
