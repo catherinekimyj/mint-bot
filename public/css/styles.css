@@ -1097,6 +1097,19 @@ a.button:hover {
   line-height: 1.5;
 }
 
+.about-botkit-info a:link{
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1;
+  font-weight: bold;
+}
+
+.about-botkit-info a:hover {
+  color: #7a7f7d;
+}
+
 #about-title {
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
@@ -1232,7 +1245,8 @@ a.button:hover {
   width: 100%;
   height: 100%;
   background-color: #4b4c4b;
-  opacity: 0.5;
+  opacity: 0.8;
+  padding-left: 35px;
 }
 
 #tutorial-button {
@@ -1294,4 +1308,50 @@ background-color: #dce5e1;
 #tutorial-exit:hover {
   color: #c4ccc8;
   cursor: pointer;
+}
+
+#tutorial-messages {
+  position: absolute;
+  width: 150px;
+   bottom: 180px;
+   left: 470px;
+   color: red;
+   text-align: center;
+}
+
+#tutorial-message i {
+  margin-top: 15px;
+  font-size: 45px;
+}
+
+#tutorial-quick-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 150px;
+   bottom: 180px;
+   right: 490px;
+   color: red;
+   text-align: center;
+}
+
+#tutorial-quick-message i {
+  position: relative;
+  right: -10px;
+}
+
+#coming-soon {
+  position: absolute;
+  left: 40%;
+  top: 41%;
+  transition: fadeIn 2s;
+  background: #dcffed;
+  position: absolute;
+  font-family: "Ubuntu", sans-serif;
+  color: #494c4b;
+  padding: 2rem;
+  border-radius: 5rem;
+  display: block;
 }
