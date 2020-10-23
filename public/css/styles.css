@@ -878,6 +878,7 @@ a.button:hover {
 
 #landing-main {
   position: relative;
+  top: -20px;
   text-align: center;
 }
 
@@ -928,7 +929,7 @@ a.button:hover {
 
 #landing-footer {
   position: absolute;
-  bottom: 0;
+  bottom: -60;
 }
 
 #mintbot {
