@@ -238,9 +238,7 @@ a.button:hover {
 }
 
 .powered_by {
-  position: relative;
-  top: 70px;
-  flex-shrink: 0;
+  /* position: relative; */
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.75;
